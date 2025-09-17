@@ -1,17 +1,15 @@
 import csv
 import random
 import time
-# import winsound  # Windows-only
+# import winsound
 
-# Load room codes from CSV
-def load_room_codes(filename):
+def roomCodeLoader(filename):
     with open(filename, 'r', encoding='utf-8') as file:
         return [line.strip() for line in file if line.strip()]
 
-# Main simulation loop
-def run_simulation(room_codes):
-    emergency_codes = ['Code Red', 'Code Blue', 'Code White']
-    print("🚨 Hospital Code Simulator Started. Press Ctrl+C to stop.\n")
+def run_simulation(roomCodes):
+    emergency_codes = ['Code  Blue', 'Code White']
+    print("Started....\n")
     
     try:
         while True:
@@ -19,16 +17,14 @@ def run_simulation(room_codes):
             time.sleep(wait_time)
 
             code = random.choice(emergency_codes)
-            location = random.choice(room_codes)
-
-            # Beep: frequency=1000Hz, duration=1000ms
+            location = random.choice(roomCodes)
             # winsound.Beep(1000, 1000)
 
-            print(f"🔊 {code} announced at location {location}")
+            print(f"> {code} | {location}")
     except KeyboardInterrupt:
         print("\nSimulation stopped manually.")
 
 # Run the program
 if __name__ == "__main__":
-    room_codes = load_room_codes("Codes.csv")
-    run_simulation(room_codes)
+    roomCodes = roomCodeLoader("Codes.csv")
+    run_simulation(roomCodes)

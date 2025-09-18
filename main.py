@@ -8,12 +8,12 @@ def roomCodeLoader(filename):
         return [line.strip() for line in file if line.strip()]
 
 def run_simulation(roomCodes):
-    emergency_codes = ['Code  Blue', 'Code White']
+    emergency_codes = ['Code  Blue', 'Code White', 'Code Pink', 'Code Red']
     print("Started....\n")
     
     try:
         while True:
-            wait_time = random.randint(10, 30)  # 1 to 2 minutes
+            wait_time = random.randint(10, 20)  # 1 to 2 minutes
             time.sleep(wait_time)
 
             code = random.choice(emergency_codes)

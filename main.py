@@ -18,11 +18,11 @@ def get_color(code):
         return "\033[97m"  # White
     elif "pink" in code:
         return "\033[95m"  # Pink
-    else:
+    else: 
         return "\033[0m"   # Default
 
 def run_simulation(roomCodes):
-    emergency_codes = ['Code Blue', 'Code White', 'Code Pink', 'Code Red']
+    emergency_codes = ['Code Blue ', 'Code White', 'Code Pink ', 'Code Red  ']
     print("Started....\n")
     
     try:
